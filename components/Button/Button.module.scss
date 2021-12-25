@@ -1,0 +1,71 @@
+@import "../../styles/variables";
+@import "../../styles/font";
+@import "../../styles/mixins";
+
+.button{
+    width: auto;
+    @include font-regular();
+    @include font-size($font-size-m);
+    @include transition(0.5s);
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(center);
+    gap: $space-6;
+    padding: 0 $space-6;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+
+    &[disabled]:not(.loading){
+        background-color: $color-grey;
+        color: $color-grey;
+        cursor: not-allowed;
+    }
+}
+
+.loading{
+    cursor: not-allowed;
+}
+
+.primary{
+    color: $color-white;
+    background: $color-secondary;
+    border:2px solid $color-secondary;
+
+    &:hover{
+        border-color: $color-black;
+        background-color: $color-black;
+    }
+}
+
+.secondary {
+    color: $color-black;
+    text-decoration: underline;
+
+    &:hover{
+        color: $color-secondary;
+    }
+}
+
+.third {
+    color: $color-white;
+    background: $color-primary;
+    text-decoration: underline;
+    border:2px solid transparent;
+
+    &:hover{
+        border-color: $color-black;
+        background-color: $color-black;
+        text-decoration: none;
+    }
+}
+
+.fourth {
+    color: $color-primary;
+    background: $color-white;
+
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+    }
+}

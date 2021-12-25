@@ -1,0 +1,68 @@
+@import "../../styles/variables";
+@import "../../styles/font";
+@import "../../styles/mixins";
+
+.header{
+    width: 100%;
+    margin-bottom: $space-base;
+    height: auto;
+    min-height: 100px;
+    color: $color-white;
+
+    > *{
+        height: 100%;
+    }
+}
+
+.wrapper{
+    width: 100%;
+    max-width: $main-container-width;
+    margin: auto;
+    padding: 0 $space-6;
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+
+    @include bp-mobile {
+        padding: $space-6;
+        @include flex-wrap(nowrap);
+    }
+  }
+
+.logo{
+    display: inline-block;
+    color: $color-red;
+    @include font-bold();
+    @include font-size($font-size-xl);
+    text-decoration: none;
+}
+
+.account{
+    @include flexbox();
+    @include align-items(center);
+    gap: $space-base;
+    text-align: right;
+
+    p {
+        @include font-light();
+        @include font-size($font-size-s);
+    }
+}
+
+.avatar{
+    border-radius: 50%;
+
+    img{
+        border-radius: 50%;
+    }
+}
+
+.member{
+    @include flexbox();
+    gap: $space-6;
+
+    @include bp-mobile {
+        gap: $space-base;
+    }
+}

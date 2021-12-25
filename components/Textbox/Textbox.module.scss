@@ -1,0 +1,84 @@
+@import "../../styles/variables";
+@import "../../styles/font";
+@import "../../styles/mixins";
+
+.container{
+    position: relative;
+    margin-bottom: $space-6;
+}
+
+.field {
+    width: 100%;
+    @include font-regular();
+    @include font-size($font-size-m);
+    padding: $space-base;
+    height: 40px;
+}
+
+.title{
+    width: 100%;
+    margin-bottom: $space-3;
+    display: block;
+}
+
+.default{
+    .field{
+        color: $color-white;
+        background: $color-third;
+        border: 0;
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    .title{
+        color: $color-white;
+    }
+}
+
+.secondary{
+    .field{
+        border: none;
+        color: $color-primary;
+        background: $color-white;
+        border: 2px solid $color-white;
+
+        &::placeholder{
+            color: $color-grey;
+        }
+
+        &:focus{
+            background-color: $color-white;
+            outline: none;
+            border: 2px solid $color-grey;
+        }
+    }
+
+    .title{
+        color: $color-white;
+    }
+}
+
+.invalid{
+    .field {
+        border: 1px solid $color-red;
+    }
+
+    p{
+        color: $color-red;
+        display: block;
+        margin: $space-3 0;
+    }
+}
+
+.search{
+    position: absolute;
+    left: $space-base;
+    top: $space-base;
+    color: $color-grey;
+
+    + .field{
+        padding-left: $space-7;
+    }
+}

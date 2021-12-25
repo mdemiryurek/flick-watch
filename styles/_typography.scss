@@ -1,0 +1,65 @@
+@import "./mixins";
+@import "./font";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body{
+    @include font-regular();
+}
+
+body{
+    overflow-x: hidden;
+    background-color: $color-primary;
+}
+
+h1{
+    @include font-bold();
+    @include font-size($font-size-huge);
+    color: $color-white;
+    margin-bottom: $space-6;
+}
+
+h2{
+    @include font-regular();
+    @include font-size($font-size-xxl);
+    color: $color-white;
+    margin-bottom: $space-5;
+}
+
+h3{
+    @include font-regular();
+    @include font-size($font-size-l);
+    color: $color-secondary;
+    margin-bottom: $space-base;
+}
+
+label, p{
+    @include font-regular();
+    @include font-size($font-size-m);
+    color: $color-white;
+}
+
+strong {
+    @include font-bold();
+}
+
+a{
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover{
+        color: $color-secondary;
+    }
+
+    &:focus{
+        outline: 2px solid $color-white;
+    }
+}
+
+button{
+    background: none;
+    border: 0;
+    cursor: pointer;
+}

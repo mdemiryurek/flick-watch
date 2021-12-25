@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;700&display=swap');
+
+$font-name: 'Readex Pro', sans-serif;
+
+@mixin font-light{
+    font-family: $font-name;
+    font-weight: 300;
+}
+
+@mixin font-regular{
+    font-family: $font-name;
+    font-weight: 400;
+}
+
+@mixin font-bold{
+    font-family: $font-name;
+    font-weight: 700;
+}
+
+@mixin font-size ($size) {
+    font-size: $size;
+    line-height: get-line-height($size);
+}
+
+@function get-line-height($size){
+    $line-height: normal;
+    @if ($size == $font-size-s) {
+        $line-height: $line-height-s;
+    }
+    @if ($size == $font-size-m) {
+        $line-height: $line-height-m;
+    }
+    @if ($size == $font-size-l) {
+        $line-height: $line-height-l;
+    }
+    @if ($size == $font-size-xl) {
+        $line-height: $line-height-xl;
+    }
+    @if ($size == $font-size-xxl) {
+        $line-height: $line-height-xxl;
+    }
+    @if ($size == $font-size-huge) {
+        $line-height: $line-height-huge;
+    }
+    @return $line-height;
+}

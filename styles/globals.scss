@@ -1,0 +1,78 @@
+@use "sass:map";
+@import "./reset";
+@import "./variables";
+@import "./font";
+@import "./typography";
+@import "./mixins";
+@import "./loader";
+
+.visually-hidden {
+    @extend %visuallyhidden;
+}
+
+$font-sizes: (
+  "small": $font-size-s,
+  "medium": $font-size-m,
+  "large": $font-size-l,
+  "x-large": $font-size-xl,
+  "xx-large": $font-size-xxl,
+  "huge": $font-size-huge
+);
+@each $name, $size in $font-sizes{
+  .fs-#{$name} {
+    @include font-size($size);
+  }
+}
+
+$colours: (
+  "primary": $color-primary,
+  "secondary": $color-secondary,
+  "third": $color-third,
+  "grey": $color-grey,
+  "white": $color-white,
+  "red": $color-red,
+  "red-light": $color-red-light,
+  "blue": $color-blue,
+  "blue-light": $color-blue-light,
+  "green-blue": $color-green,
+  "green-light": $color-green-light
+);
+@each $name, $color in $colours{
+  .fc-#{$name} {
+    color: $color;
+  }
+}
+
+$spaces: (
+  "1": $space-1,
+  "2": $space-2,
+  "3": $space-3,
+  "base": $space-base,
+  "5": $space-5,
+  "6": $space-6,
+  "7": $space-7,
+  "8": $space-8,
+  "9": $space-9,
+  "10": $space-10
+);
+@each $name, $space in $spaces{
+  .space-#{$name} {
+    margin-top: $space;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: $main-container-width;
+  margin: 0 auto;
+  padding: 0 $space-6;
+  margin-bottom: $space-8;
+}
+
+.small-container {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: $space-6;
+  margin-bottom: $space-8;
+}

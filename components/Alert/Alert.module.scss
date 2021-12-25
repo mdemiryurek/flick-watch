@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+@import "../../styles/font";
+@import "../../styles/mixins";
+
+.alert{
+    width: 100%;
+    display: block;
+    padding: $space-base;
+    @include font-regular;
+    @include font-size($font-size-m);
+    border:2px solid;
+    margin-bottom: $space-6;
+    background-color: $color-white;
+}
+
+.success{
+    border-color: $color-green;
+    color: $color-green;
+}
+
+.info{
+    border-color: $color-blue;
+    color: $color-blue;
+}
+
+.error{
+    border-color: $color-red;
+    color: $color-red;
+}
