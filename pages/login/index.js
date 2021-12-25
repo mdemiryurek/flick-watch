@@ -3,7 +3,7 @@ import Textbox from "../../components/Textbox/Textbox";
 import { useInput } from "../../hooks/useInput";
 import { signIn } from "next-auth/client"
 import Alert from "../../components/Alert/Alert";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import { checkValidForm, validateForm } from "../../lib/validation";
 import { useRouter } from 'next/router'
 import styles from './login.module.scss'
