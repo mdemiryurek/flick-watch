@@ -10,8 +10,6 @@ const Header = () => {
     const router = useRouter();
     const [session] = useSession();
 
-    console.log(process.env.NEXTAUTH_SECRET);
-
     const logout = () => {
         signOut({redirect: false});
     }

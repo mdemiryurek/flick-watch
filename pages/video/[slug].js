@@ -66,7 +66,7 @@ const Video = ({video}) => {
                                 <div className={styles.memberButtons}>
                                     <Button title='Register for free' onClick={() => router.push('/register')}></Button>
                                     
-                                    <span className='fs-small fc-blue-light'><Link href='/login'>click here</Link> to log in.</span>
+                                    <span className='fs-small fc-blue-light'>or <Link href='/login'>log in</Link></span>
                                 </div>
                                 
                             )}

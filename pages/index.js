@@ -32,6 +32,17 @@ const MainVideo = ({video}) => {
   )
 }
 
+const UnseenVideos = ({videos}) => {
+  const useSeenVideos = (videos) => {
+    return videos.filter(video => video.recommend === true).slice(0, 5)
+  }
+
+  return (
+    <Section genre={'Recommended for you'}
+      videos={useSeenVideos(videos)}></Section>
+  )
+}
+
 const Home = ({videos}) => {
   const [session] = useSession();
 
@@ -41,11 +52,7 @@ const Home = ({videos}) => {
   }
 
   const filterVideos = (videos, genre) => {
-    return videos.filter((video) => video.tags.includes(genre));
-  }
-
-  const useSeenVideos = (videos) => {
-      return videos.filter(video => video.seen === false || video.seen === null)
+    return videos.filter((video) => video.tags.includes(genre)).slice(0, 5);
   }
 
   return (
@@ -54,8 +61,7 @@ const Home = ({videos}) => {
 
       <div className='container'>
         {session && (
-          <Section genre={'Recommended for you'}
-            videos={useSeenVideos(videos)}></Section>
+          <UnseenVideos videos={videos}></UnseenVideos>
         )}
         <Section genre={'Drama'}
           videos={filterVideos(videos, 'drama')}></Section>
